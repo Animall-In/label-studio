@@ -18,7 +18,7 @@ const InvitationModal = ({ link }) => {
   return (
     <Block name="invite">
       <Input
-        value= "No..😂😂😂"
+        value= "No..😂😂😂   Sorry!"
         style={{ width: '100%' }}
         readOnly
       />
@@ -48,6 +48,7 @@ export const PeoplePage = () => {
   }, [config, setLink]);
 
   const updateLink = useCallback(() => {
+    console.log("Hello");
     api.callApi('resetInviteLink').then(({ invite_url }) => {
       setInviteLink(invite_url);
     });
@@ -71,14 +72,8 @@ export const PeoplePage = () => {
       return (
         <Space spread>
           <Space>
-            <Button style={{ width: 170 }} onClick={() => updateLink()}>
-              Reset Link
-            </Button>
           </Space>
           <Space>
-            <Button primary style={{ width: 170 }} onClick={copyLink}>
-              {copied ? "Copied!" : "Copy link"}
-            </Button>
           </Space>
         </Space>
       );
