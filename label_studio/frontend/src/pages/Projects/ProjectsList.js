@@ -7,6 +7,7 @@ import { Button, Dropdown, Menu, Pagination, Userpic } from '../../components';
 import { Block, Elem } from '../../utils/bem';
 import { absoluteURL } from '../../utils/helpers';
 
+
 export const ProjectsList = ({ projects, currentPage, totalItems, loadNextPage, pageSize }) => {
   return (
     <>
@@ -69,7 +70,6 @@ const ProjectCard = ({ project }) => {
             }}>
               <Dropdown.Trigger content={(
                 <Menu>
-                  <Menu.Item href={`/projects/${project.id}/settings`}>Settings</Menu.Item>
                   <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>Label</Menu.Item>
                 </Menu>
               )}>
@@ -114,3 +114,4 @@ const ProjectCard = ({ project }) => {
     </Elem>
   );
 };
+
